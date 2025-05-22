@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Loan Payoff Calculator</title>
+  <!-- Include CSS file -->
+  <link rel="stylesheet" href="calculator.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Workout Time Calculator</h1>
+
+    <div style="padding-bottom: 25px;">This webpage helps coaches and trainers calulate the duration of a workout program based on the number of sets, reps, and rest time. It will also probide an overview analysis of the difficulty of the workout based on basic factors.
+    </div>
+
+    <form id="workout-form">
+      <fieldset>
+
+        <div style="display: grid;">
+          <label id="typeLabel" for="type">Workout Type</label>
+          <select id="type" name="type" required>
+            <option value="for-time">For Time</option>
+            <option value="amrap">AMRAP</option>
+            <option value="emom">EMOM</option>
+          </select>
+
+          <label id="timeCapLabel" for="time-cap">Time Cap (in minutes, if applicable)</label>
+          <input type="number" id="time-cap" name="time-cap" placeholder="e.g., 20" min="0">
+
+          <label id="roundsLabel" for="rounds">Rounds</label>
+          <input type="number" id="rounds" name="rounds" placeholder="e.g., 3" min="1" required value="1">
+        </div>
+        <div>
+          <legend>Workout Type:</legend>
+          
+          <input type="radio" id="individual" name="workoutType" value="individual" checked>
+          <label class="fieldLabel" for="individual">Individual</label>
+          
+          <input type="radio" id="team" name="workoutType" value="team">
+          <label class="fieldLabel" for="team">Team Chipper</label>
+
+          <input type="radio" id="teamTime" name="workoutType" value="teamTime">
+          <label class="fieldLabel" for="teamTime">Time-Based Team</label>
+        </div>
+      
+        <div style="display: grid;">
+
+          <label id="teamLabel" for="team">Team Size</label>
+          <input type="number" id="teamInput" name="teams" placeholder="e.g., 3" min="2" max="8" required value="2">
+
+          <label id="individualExample" for="movements">
+            Movements (format: reps(or distance),exercise)
+            Example: 
+            <ul>
+              <li>15,push up</li>
+              <li>10,burpee</li>
+              <li>5,60kg power clean</li>
+              <li>20,wall ball</li>
+              <li>100m,run</li>
+              <li>20,cal row</li>
+            </ul>
+            Cardio machine and ERG machines are assumed to be in meters unless specified with <strong>cals</strong> in the movement name. See example above. Please include weight in <strong>kg</strong>.
+          </label>
+
+          <label id="teamExample" for="movements">
+            Movements (format: reps(or distance),exercise)
+            Example: 
+            <ul>
+              <li>2km, c2</li>
+              <li>50, 50kg power clean</li>
+              <li>100, wall ball</li>
+              <li>100, sit up</li>
+              <li>100, thrusters</li>
+              <li>100, kb swing</li>
+            </ul>
+            Cardio machine and ERG machines are assumed to be in meters unless specified with <strong>cals</strong> in the movement name. See example above. Please include weight in <strong>kg</strong>.
+          </label>
+
+          <label id="teamTimeExample" for="movements">
+            Movements (format: reps(or distance),exercise)
+            Example: 
+            <ul>
+              <li>@0min</li>
+              <li>24km, c2</li>
+              <li>5km,row</li>
+              <li>2.5km, ski</li>
+              <li>@24min</li>
+              <li>5km, ski</li>
+              <li>@32min</li>
+              <li>2.5km, row</li>
+            </ul>
+            Cardio machine and ERG machines are assumed to be in meters unless specified with <strong>cals</strong> in the movement name. See example above. Please include weight in <strong>kg</strong>.
+          </label>
+          
+          <textarea id="movements" name="movements" placeholder="e.g., 15,Push-up\n10,Burpee" rows="6" required></textarea>
+
+          <button type="submit">Calculate Duration</button>
+        </div>
+      </form>
+
+      <div class="result" id="results"></div>
+    </fieldset>
+  </div>
+
+  <div class="container" style="display: grid;">
+    <form id="feedback-form"
+      action="https://formspree.io/f/mdkgbqkd"
+      method="POST">
+      <h2>Feedback</h2>
+      <label for="feedback">Please provide your feedback on this webpage, This is the first version of this site and will likely have many bugs, I'm determined to fix these and make this easier for trainers to use:</label>
+      <textarea id="feedback" name="feedback" placeholder="Your feedback here..." rows="6"></textarea>
+      <button style="background-color: coral;" type="submit">Submit Feedback</button>
+    </form>
+    <div id="feedbackResult"></div>
+  </div>
+
+  <script type="module" src="timePerRep.js"></script>
+  <script type="module" src="calculator.js"></script>
+</body>
+</html>

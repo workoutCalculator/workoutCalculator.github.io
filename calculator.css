@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+.container {
+    max-width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+textarea {
+    width: auto;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input {
+    width: auto;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+select {
+    width: auto;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+button {
+    width: 100%;
+    padding: 20px 30px;
+    margin-top: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: large;
+}
+.result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+.hidden {
+    display: none;
+}
+
+.fieldLabel {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px solid #444;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+fieldset input[type="radio"] {
+display: none;
+}
+
+fieldset input[type="radio"]:checked + label {
+background-color: #444;
+color: white;
+}
