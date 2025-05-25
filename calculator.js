@@ -48,7 +48,7 @@ document.getElementById('workout-form').addEventListener('submit', function (e) 
         var reps = 0;
         if (line.split(',').map(s => s.trim()).length < 2) {
             // check if is timer
-            if (teamType === 'teamTime' && line.includes('@')) {
+            if (teamType === "teamTime" && line.includes('@')) {
                 // this is a time indicator
                 // always assume set in min
                 line.replace(/@/g, '');
@@ -161,6 +161,10 @@ document.getElementById('workout-form').addEventListener('submit', function (e) 
         console.log('reps', reps);
         console.log('multiplier', weightMultiplier);
         if (teamType === 'teamTime') {
+            // also if no time interval is set, then default to previous time interval, if none, then default to 0min
+            if (timeIntervals.length === 0) {
+                timeIntervals.push(0);
+            }
            // need to append to time in intervals array
             timeIntervalTotals[timeIntervalTotals.length - 1].push(reps * weightMultiplier * time);
             workoutSegments.push({
@@ -413,3 +417,31 @@ function estimateWorkoutTime({ workoutSegments, timePerRep, teamSize, swapInterv
 
     return currentTime;
 }
+
+// Form submission Handler
+document.getElementById('feedback-form').addEventListener('submit', async function (e) {
+  e.preventDefault(); // Prevent default form submission
+
+  const form = e.target;
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    const resultDiv = document.getElementById('feedbackResult');
+    if (response.ok) {
+      resultDiv.textContent = "Thank you for your feedback!";
+      form.reset();
+    } else {
+      resultDiv.textContent = "There was an issue submitting your feedback. Please try again.";
+    }
+  } catch (error) {
+    document.getElementById('feedbackResult').textContent = "Network error. Please try again.";
+  }
+});
