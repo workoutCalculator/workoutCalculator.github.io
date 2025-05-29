@@ -5,7 +5,7 @@ body {
     margin: 0;
 }
 .background-container {
-    padding: 15px;
+    padding: 25px;
     position: relative;
     height: max-content;
     background-image: url('background1.png');
@@ -71,6 +71,7 @@ button {
 .result {
     margin-top: 20px;
     font-weight: bold;
+    font-size: large;
 }
 .hidden {
     display: none;

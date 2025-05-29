@@ -13,7 +13,7 @@ export const timePerRep = {
     "burpee": 2,
     "get up": 1.75,
     "air squat": 0.9,
-    "pull up": 0.9,
+    "pull up": 0.8,
     "chest to bar": 1.1,
     "sit up": 0.8,
     "toes to bar": 1,
@@ -41,7 +41,7 @@ export const timePerRep = {
     "overhead squat": 1,
     "push press": 0.8,
     "push jerk": 0.9,
-    "thruster": 1,
+    "thruster": 1.9,
     "dumbbell snatch": 1.1,
     "dumbbell clean and jerk": 2,
     "kettlebell swing": 1,
@@ -59,7 +59,7 @@ export const timePerRep = {
     "muscle up": 3,
     "handstand walk": 0.5, // per step
     "pistol squat": 1,
-    "hollow rock": 0.6
+    "hollow rock": 0.7
     },
 
     // Conditioning / cardio machines
@@ -71,14 +71,14 @@ export const timePerRep = {
     "c2": 0.1, 
     "cal bike": 3,
     "cal c2": 3,
-    "run": 0.20, 
+    "run": 0.21, 
     "assault bike": 0.1, 
     "cal assault bike": 3,
     "ski": 0.25, 
     "cal ski": 2.85,
     "double under": 0.66,
     "single under": 0.8,
-    "box step-over": 2.3,
+    "box step-over": 2.5,
     "db box step-over": 3.5
     },
 
@@ -95,7 +95,7 @@ export const timePerRep = {
     "sandbag clean": 4,
     "sled push": 0.3,
     "farmer carry": 0.5,
-    "wall ball": 1.5,
+    "wall ball": 2,
     "devil's press": 3
     }
 };
