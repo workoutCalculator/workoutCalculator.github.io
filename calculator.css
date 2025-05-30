@@ -5,12 +5,13 @@ body {
     margin: 0;
 }
 .background-container {
-    padding: 25px;
     position: relative;
+    background-attachment: fixed;
     height: max-content;
     background-image: url('background1.png');
     background-size: cover;
     background-position: center;
+    padding-bottom: 25px;
 }
 
 .background-overlay {
@@ -99,4 +100,35 @@ display: none;
 fieldset input[type="radio"]:checked + label {
 background-color: #444;
 color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  margin-bottom: 25px;
+  background-color: rgba(45, 45, 45, 0.9);
+  /* border-bottom: 1px solid #ccc; */
+  font-family: sans-serif;
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: x-large;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #007acc;
+}
+
+.listItem {
+  margin-bottom: 20px;
 }

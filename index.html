@@ -21,6 +21,11 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4967024310256978"
       crossorigin="anonymous"></script>
     
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="workoutList.html">Workouts</a>
+    </nav>
+    
     <div class="container">
 
       <h1>Workout Time Calculator</h1>
@@ -49,6 +54,18 @@
 
       <form id="workout-form">
         <fieldset>
+          <div>
+            <legend>Workout Type:</legend>
+            
+            <input type="radio" id="individual" name="workoutType" value="individual" checked>
+            <label class="fieldLabel" for="individual">Individual</label>
+            
+            <input type="radio" id="team" name="workoutType" value="team">
+            <label class="fieldLabel" for="team">Team Chipper</label>
+
+            <input type="radio" id="teamTime" name="workoutType" value="teamTime">
+            <label class="fieldLabel" for="teamTime">Time-Based Team</label>
+          </div>
 
           <div style="display: grid;">
             <label id="typeLabel" for="type">Workout Type</label>
@@ -63,18 +80,6 @@
 
             <label id="roundsLabel" for="rounds">Rounds</label>
             <input type="number" id="rounds" name="rounds" placeholder="e.g., 3" min="1" required value="1">
-          </div>
-          <div>
-            <legend>Workout Type:</legend>
-            
-            <input type="radio" id="individual" name="workoutType" value="individual" checked>
-            <label class="fieldLabel" for="individual">Individual</label>
-            
-            <input type="radio" id="team" name="workoutType" value="team">
-            <label class="fieldLabel" for="team">Team Chipper</label>
-
-            <input type="radio" id="teamTime" name="workoutType" value="teamTime">
-            <label class="fieldLabel" for="teamTime">Time-Based Team</label>
           </div>
         
           <div style="display: grid;">
