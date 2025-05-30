@@ -124,6 +124,9 @@ color: white;
   font-weight: 600;
   transition: color 0.3s ease;
 }
+.navbar a.active {
+  color: grey;
+}
 
 .navbar a:hover {
   color: #007acc;
