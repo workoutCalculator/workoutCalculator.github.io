@@ -16,6 +16,17 @@ async function updatePage() {
     } catch (error) {
         list.innerHTML = `<p>Error loading workouts: ${error.message}</p>`;
     }
+    // for mobile screens, adjust UI
+    if (isMobile()) {
+        document.querySelectorAll('.container').forEach(el => {
+            el.classList.add('mobile');
+        });
+    } else {
+        document.querySelectorAll('.container').forEach(el => {
+            el.classList.remove('mobile');
+        });
+    }
+
 }
 
 function parseWorkoutTextToHTML(text) {
@@ -39,4 +50,8 @@ function parseWorkoutTextToHTML(text) {
     }
 
     return html;
+}
+
+function isMobile() {
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 }

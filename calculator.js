@@ -282,7 +282,7 @@ function updatePage() {
     // for mobile screens, adjust UI
     if (isMobile()) {
         document.querySelectorAll('.container').forEach(el => {
-            el.classList.toggle('mobile', window.innerWidth <= 768);
+            el.classList.add('mobile');
         });
     } else {
         document.querySelectorAll('.container').forEach(el => {
