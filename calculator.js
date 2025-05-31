@@ -278,6 +278,17 @@ function updatePage() {
             }
         }
     });
+
+    // for mobile screens, adjust UI
+    if (isMobile()) {
+        document.querySelectorAll('.container').forEach(el => {
+            el.classList.toggle('mobile', window.innerWidth <= 768);
+        });
+    } else {
+        document.querySelectorAll('.container').forEach(el => {
+            el.classList.remove('mobile');
+        });
+    }
 }
 
 function extractWeight(input) {
@@ -522,4 +533,8 @@ function calculateWeightMultiplier(weight) {
         base = sigmoid(weight, 85, 0.8); // Midpoint = shifted to fit upper range
         return 1.6 + (1 * base); // Scales from 1.5 to ~2
     }
+}
+
+function isMobile() {
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 }
